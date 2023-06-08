@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Order Placement Service</a>
+  <a class="navbar-brand" th:href="@{/orders}>Order Placement Service</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -51,7 +51,7 @@
 			</thead>
 			
 			<tbody>
-				<tr th:each = "order: ${orders}">
+				<tr th:each = "order: ${orderList}">
 					<td th:text = "${order.id}"></td>
 					<td th:text = "${order.productName}"></td>
 					<td th:text = "${order.quantity}"></td>
@@ -61,7 +61,7 @@
 						<a th:href = "@{/orders/edit/{id}(id=${order.id})}"
 						 class = "btn btn-primary">Update</a>
 						
-						<a th:href = "@{/orders/{id}(id=${order.id})}"
+						<a th:href = "@{/orders/delete/{id}(id=${order.id})}"
 						 class = "btn btn-danger">Delete</a>
 						 
 					</td>

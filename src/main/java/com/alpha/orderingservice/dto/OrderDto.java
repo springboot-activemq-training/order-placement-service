@@ -1,9 +1,9 @@
-package com.alpha.orderingservice.model;
+package com.alpha.orderingservice.dto;
 
 import lombok.Data;
 
 @Data
-public class Order {
+public class OrderDto {
     private int id;
     private String productName;
     private int quantity;
